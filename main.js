@@ -9,3 +9,10 @@ function createGrid() {
   }
 }
 createGrid();
+
+const square = document.querySelectorAll(".square");
+square.forEach((current) => {
+  current.addEventListener("mouseover", (event) => {
+    event.target.classList.add("hover");
+  })
+});
