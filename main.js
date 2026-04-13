@@ -10,9 +10,12 @@ function createGrid() {
 }
 createGrid();
 
+function changeSquareColour() {
 const square = document.querySelectorAll(".square");
 square.forEach((current) => {
   current.addEventListener("mouseover", (event) => {
     event.target.classList.add("hover");
   })
 });
+}
+changeSquareColour();
