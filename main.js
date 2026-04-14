@@ -8,6 +8,7 @@ function createGrid(n) {
   while (times < grid) {
   const div = document.createElement("div");
   div.classList.add("square");
+  div.style.opacity = 0;
   div.style.width = `${size}px`;
   div.style.height = `${size}px`;
   container.appendChild(div);
@@ -28,10 +29,17 @@ function getRandomRGB() {
 function changeSquareColour() {
 const square = document.querySelectorAll(".square");
 square.forEach((current) => {
+  
   current.addEventListener("mouseover", (event) => {
     let rgb = getRandomRGB();
+    if (event.target.style.backgroundColor == "") {
     event.target.style.backgroundColor = rgb;
-    console.log(rgb);
+    }
+    let n = Number(event.target.style.opacity);
+    if (n < 1) {
+      n += 0.1;
+      event.target.style.opacity = n;
+    }
   })
 });
 }
