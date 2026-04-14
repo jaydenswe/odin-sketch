@@ -30,14 +30,14 @@ const square = document.querySelectorAll(".square");
 
 function getUserInput() {
   gridButton.addEventListener("click", () => {
-    let n = prompt("Enter number of squares per side for new grid: ");
+    let n = Number(prompt("Enter number of squares per side for new grid: "));
     if (n <= 100) {
       container.innerHTML = '';
       createGrid(n);
       changeSquareColour();
     }
     else {
-      console.log("error");
+      alert("That is not a valid size, try again.");
     }
   })
 }
