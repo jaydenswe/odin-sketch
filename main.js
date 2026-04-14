@@ -1,14 +1,16 @@
-function createGrid() {
+const container = document.getElementById("grid-container");
+
+function createGrid(n) {
   let times = 0;
-  const container = document.getElementById("container");
-  while (times < 256) {
+  let grid = n * n;
+  while (times < grid) {
   const div = document.createElement("div");
   div.classList.add("square");
   container.appendChild(div);
   times++;
   }
 }
-createGrid();
+createGrid(16);
 
 function changeSquareColour() {
 const square = document.querySelectorAll(".square");
@@ -19,3 +21,7 @@ square.forEach((current) => {
 });
 }
 changeSquareColour();
+
+function getUserInput(n) {
+  
+}
