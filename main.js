@@ -4,9 +4,12 @@ const gridButton = document.querySelector("#gridButton");
 function createGrid(n) {
   let times = 0;
   let grid = n * n;
+  let size = 960 / n;
   while (times < grid) {
   const div = document.createElement("div");
   div.classList.add("square");
+  div.style.width = `${size}px`;
+  div.style.height = `${size}px`;
   container.appendChild(div);
   times++;
   }
@@ -31,6 +34,7 @@ function getUserInput() {
     if (n <= 100) {
       container.innerHTML = '';
       createGrid(n);
+      changeSquareColour();
     }
     else {
       console.log("error");
