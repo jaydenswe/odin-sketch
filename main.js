@@ -26,12 +26,10 @@ square.forEach((current) => {
 }
 changeSquareColour();
 
-const square = document.querySelectorAll(".square");
-
 function getUserInput() {
   gridButton.addEventListener("click", () => {
     let n = Number(prompt("Enter number of squares per side for new grid: "));
-    if (n <= 100) {
+    if (n <= 100 && n > 0) {
       container.innerHTML = '';
       createGrid(n);
       changeSquareColour();
