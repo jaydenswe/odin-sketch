@@ -24,13 +24,14 @@ function getRandomRGB() {
   let rgb = (`rgb(${red}, ${green}, ${blue})`);
   return rgb;
 }
-getRandomRGB();
 
 function changeSquareColour() {
 const square = document.querySelectorAll(".square");
 square.forEach((current) => {
   current.addEventListener("mouseover", (event) => {
-    event.target.classList.add("hover");
+    let rgb = getRandomRGB();
+    event.target.style.backgroundColor = rgb;
+    console.log(rgb);
   })
 });
 }
