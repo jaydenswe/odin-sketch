@@ -1,4 +1,5 @@
 const container = document.getElementById("grid-container");
+const gridButton = document.querySelector("#gridButton");
 
 function createGrid(n) {
   let times = 0;
@@ -22,6 +23,18 @@ square.forEach((current) => {
 }
 changeSquareColour();
 
-function getUserInput(n) {
-  
+const square = document.querySelectorAll(".square");
+
+function getUserInput() {
+  gridButton.addEventListener("click", () => {
+    let n = prompt("Enter number of squares per side for new grid: ");
+    if (n <= 100) {
+      container.innerHTML = '';
+      createGrid(n);
+    }
+    else {
+      console.log("error");
+    }
+  })
 }
+getUserInput();

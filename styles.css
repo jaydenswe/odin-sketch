@@ -9,17 +9,12 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  height: 750px;
-  width: 750px;
+  height: 960px;
+  width: 960px;
 }
 
 .square {
-  width: 10px;
-  height: 10px;
-  border: 5px solid black;
-  margin: 1px;
-  padding: 10px;
+  border: 1px solid black;
 }
 
 .hover {
